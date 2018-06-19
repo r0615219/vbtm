@@ -1,0 +1,42 @@
+{% extends "_layout" %}
+
+{% block content %}
+<section class="wrapper style1">
+	<div class="container">
+		<div id="content">
+
+			<!-- Content -->
+
+			<article>
+				<header>
+					<h2>Agenda</h2>
+				</header>
+
+				<table>
+					<tr style="font-weight: bold; text-align: left">
+						<th>Reeks</th>
+						<th>Thuis</th>
+						<th>Bezoekers</th>
+						<th>Datum</th>
+						<th>Datum</th>
+						<th>Locatie</th>
+					</tr>
+					{% for event in craft.entries.section('wedstrijden').orderBy('date') %}
+					<tr>
+						<td>{{ event.reeks }}</td>
+						<td>{{ event.thuis }}</td>
+						<td>{{ event.bezoekers }}</td>
+						<td>{{ event.date }}</td>
+						<td>{{ event.datum|date('d/m/Y') }}</td>
+						<td>{{ event.locatie }}</td>
+					</tr>
+					{% endfor %}
+				</table>
+
+			</article>
+
+		</div>
+	</div>
+</section>
+
+{% endblock %}

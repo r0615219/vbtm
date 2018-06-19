@@ -1,0 +1,143 @@
+.feed-item.juicer.image-post, h1.referral, .j-share{
+	display: none !important;
+}
+
+.juicer-feed .j-paginate, .j-post-overlay.juicer-feed a.juicer-button {
+	border: 2px solid #2E2276 !important;
+	color: #2E2276 !important;
+}
+
+.juicer-feed .j-paginate:hover, .j-post-overlay.juicer-feed a.juicer-button:hover {
+	background: #2E2276 !important;
+	color: #F2F2F2 !important;
+} 
+
+#j-column-0 > li {
+	border-width: 1px 1px 1px 1px !important;
+}
+
+.j-close {
+	border-bottom: 0px solid white !important;
+}
+
+p {
+	margin: 0 0 0.7em 0
+} 
+
+#content ul {
+	list-style: disc;
+	list-style-position: inside;
+}
+
+/* ALBUM GALLERY */
+
+.wrapper.style1 {
+	width: 100%;
+}
+.album {
+	display: block;
+	width: 90%;
+	max-width: 1000px;
+	margin: 20px auto;
+	border: 1px solid gainsboro;
+	padding: 10px;
+	border-radius: 5px;
+}
+
+.album .flex {
+	display: flex;
+	width: 100%;
+	height: 200px;
+	flex-direction: row;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+	margin-bottom: 1em;
+	overflow: hidden;
+}
+
+.album .flex img {
+	display: block;
+	height: 100%;
+	margin: 10px;
+}
+
+.album .button, .album h3 {
+	margin-left: 10px;
+}
+
+/* SPONSORS */
+.sponsors .flex {
+	display: flex;
+	width: 90%;
+	margin: 10px auto;
+	flex-direction: row;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.sponsors .flex div {
+	margin: 30px;
+	width: 200px;
+	height: 200px;
+	overflow: hidden;
+}
+
+.sponsors .flex div a, .sponsors .flex div img {
+	display: block;
+	width: 100%;
+}
+
+.sponsors .flex a {
+	border-bottom: dotted 0px;
+}
+
+.vertical {
+  display: flex;
+  align-items: center;
+}
+
+
+/* CONTACT */
+.contact .flex {
+	display: flex;
+	width: 90%;
+	margin: 10px auto;
+	flex-direction: row;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+}
+
+.contact .flex .person {
+	display: block;
+	width: 300px;
+	margin: 50px;
+}
+
+/* PLOEGFOTOS */
+.ploegen .flex {
+	display: flex;
+	width: 90%;
+	margin: 10px auto;
+	flex-direction: row;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.ploegen .flex .ploeg {
+	display: block;
+	width: 300px;
+	margin: 30px;
+}
+
+.ploegen .flex .ploeg .image {
+	display: block;
+	width: 100%;
+	height: 250px;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+
+
+

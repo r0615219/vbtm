@@ -1,0 +1,19 @@
+<div id="header">
+
+	<!-- Logo -->
+	<h1>&nbsp; <br> &nbsp;</h1>
+
+	<!-- Nav -->
+	<nav id="nav">
+		<ul>
+			<li {% if entry.section.handle == 'home' %}class="current"{% endif %}><a href="{{ craft.entries.section('home').first().getUrl() }}">Home</a></li>
+			<li {% if entry.section.handle == 'onzeClub' %}class="current"{% endif %}><a href="{{ craft.entries.section('onzeClub').first().getUrl() }}">Onze Club</a></li>
+			<li {% if entry.section.handle == 'ploegen' %}class="current"{% endif %}><a href="{{ craft.entries.section('ploegen').first().getUrl() }}">Ploegen</a></li>
+			<li {% if entry.section.handle == 'agenda' %}class="current"{% endif %}><a href="{{ craft.entries.section('agenda').first().getUrl() }}">Agenda</a></li>
+			<li {% if entry.section.handle == 'jeugd' %}class="current"{% endif %}><a href="{{ craft.entries.section('jeugd').first().getUrl() }}">Jeugd</a></li>
+			<li {% if entry.section.handle == 'fotos' %}class="current"{% endif %}><a href="{{ craft.entries.section('fotos').first().getUrl() }}">Foto's</a></li>
+			<li {% if entry.section.handle == 'contact' %}class="current"{% endif %}><a href="{{ craft.entries.section('contact').first().getUrl() }}">Contact</a></li>
+		</ul>
+	</nav>
+
+</div>
