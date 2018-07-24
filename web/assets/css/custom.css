@@ -24,9 +24,23 @@ p {
 	margin: 0 0 0.7em 0
 } 
 
-#content ul {
-	list-style: disc;
-	list-style-position: inside;
+.text-small {
+	font-size: 0.8em;
+}
+
+#content ul.list {
+  list-style: none;
+  padding: 0;
+}
+#content .list li {
+  padding-left: 1.3em;
+}
+#content .list li:before {
+  content: "\f105"; /* FontAwesome Unicode */
+  font-family: FontAwesome;
+  display: inline-block;
+  margin-left: -1.3em; /* same as padding-left set on li */
+  width: 1.3em; /* same as padding-left set on li */
 }
 
 /* ALBUM GALLERY */
@@ -100,17 +114,20 @@ p {
 /* CONTACT */
 .contact .flex {
 	display: flex;
-	width: 90%;
+	width: 97%;
 	margin: 10px auto;
 	flex-direction: row;
-	justify-content: flex-start;
+	justify-content: center;
 	flex-wrap: wrap;
 }
 
 .contact .flex .person {
 	display: block;
 	width: 300px;
-	margin: 50px;
+	margin: 15px;
+	border: 1px solid gainsboro;
+	border-radius: 5px;
+	padding: 20px;
 }
 
 /* PLOEGFOTOS */
@@ -137,6 +154,55 @@ p {
 	background-position: center;
 	background-repeat: no-repeat;
 }
+
+/* AGENDA */
+.table-small {
+	display: block;
+	width: 100%;
+	white-space: nowrap;
+	overflow-x: scroll;
+}
+
+.table-small th {
+	padding: 0 0 10px 0 !important;
+}
+
+.table-small td {
+	padding: 10px 25px 10px 0 !important;
+}
+
+.table-small .text-small {
+	border-bottom: 1px solid #eee;
+}
+
+.pagination {
+    display: flex;
+    width: 250px;
+    list-style: none !important;
+    flex-direction: row;
+    margin: 25px auto;
+}
+
+.pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-bottom-width: 0;
+}
+
+.pagination a:hover {
+	background-color: #eee;
+}
+
+.pagination .pagination__btn.active, .pagination .pagination__btn.active:hover {
+	background-color: #2E2276;
+	color: white;
+}
+
+
+
+
 
 
 

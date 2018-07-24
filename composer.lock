@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "37ffc838dbee54df7f4c0fd00d28ca52",
+    "content-hash": "ddf76ac7038808d5d65a92437369a725",
     "packages": [
         {
             "name": "benjamminf/craft-embedded-assets",
@@ -64,11 +64,11 @@
         },
         {
             "name": "cakephp/core",
-            "version": "3.6.5",
+            "version": "3.6.7",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cakephp/core/zipball/43985aaf802847238ff625651a3677ed56ffcbb4",
-                "reference": "43985aaf802847238ff625651a3677ed56ffcbb4",
+                "url": "https://api.github.com/repos/cakephp/core/zipball/6b9a318ba91fad450ecfc42b303fbbc2fb1c15bd",
+                "reference": "6b9a318ba91fad450ecfc42b303fbbc2fb1c15bd",
                 "shasum": ""
             },
             "require": {
@@ -103,11 +103,11 @@
                 "core",
                 "framework"
             ],
-            "time": "2018-05-26T15:25:09+00:00"
+            "time": "2018-07-03T20:27:53+00:00"
         },
         {
             "name": "cakephp/utility",
-            "version": "3.6.5",
+            "version": "3.6.7",
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/cakephp/utility/zipball/3478eba87128cca4755ea16b469e59d1155650cd",
@@ -1672,11 +1672,11 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "1.30.0",
+            "version": "1.32.0",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/863a1a651ea324e1838da3a52753a4239b9d4bea",
-                "reference": "863a1a651ea324e1838da3a52753a4239b9d4bea",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/64563e2b9f69e4db1b82a60e81efa327a30ff343",
+                "reference": "64563e2b9f69e4db1b82a60e81efa327a30ff343",
                 "shasum": ""
             },
             "require": {
@@ -1684,6 +1684,13 @@
                 "symfony/translation": "~2.6 || ~3.0 || ~4.0"
             },
             "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Carbon\\Laravel\\ServiceProvider"
+                    ]
+                }
+            },
             "autoload": {
                 "psr-4": {
                     "": "src/"
@@ -1706,7 +1713,7 @@
                 "datetime",
                 "time"
             ],
-            "time": "2018-06-15T11:52:26+00:00"
+            "time": "2018-07-05T06:59:26+00:00"
         },
         {
             "name": "paragonie/random_compat",
@@ -2730,11 +2737,11 @@
         },
         {
             "name": "verbb/feed-me",
-            "version": "3.0.0-beta.15",
+            "version": "3.0.0-beta.17",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/verbb/feed-me/zipball/27a809e31d38a44cb2aee11ae7316d256a9c07b2",
-                "reference": "27a809e31d38a44cb2aee11ae7316d256a9c07b2",
+                "url": "https://api.github.com/repos/verbb/feed-me/zipball/171ec71b2ad2077ec73f4cad250b3bfab4e30779",
+                "reference": "171ec71b2ad2077ec73f4cad250b3bfab4e30779",
                 "shasum": ""
             },
             "require": {
@@ -2787,7 +2794,7 @@
                 "docs": "https://github.com/verbb/feed-me",
                 "rss": "https://github.com/verbb/feed-me/commits/v2.atom"
             },
-            "time": "2018-06-12T13:08:13+00:00"
+            "time": "2018-07-19T05:36:11+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
@@ -3372,21 +3379,15 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "vlucas/phpdotenv": 20,
         "includable/craft-ics-importer": 20,
         "composer/ca-bundle": 20,
         "composer/semver": 20,
         "composer/spdx-licenses": 20,
         "doctrine/lexer": 20,
-        "guzzlehttp/guzzle": 20,
-        "guzzlehttp/promises": 20,
-        "guzzlehttp/psr7": 20,
         "justinrainbow/json-schema": 20,
-        "psr/http-message": 20,
         "psr/log": 20,
         "seld/phar-utils": 20,
         "swiftmailer/swiftmailer": 20,
-        "symfony/polyfill-mbstring": 20,
         "yiisoft/yii2-bootstrap": 20,
         "yiisoft/yii2-composer": 20,
         "yiisoft/yii2-debug": 20,

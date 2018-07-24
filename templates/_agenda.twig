@@ -12,26 +12,35 @@
 					<h2>Agenda</h2>
 				</header>
 
-				<table>
+				<table class="table-small">
 					<tr style="font-weight: bold; text-align: left">
+						<th>Datum</th>
+						<th>Uur</th>
 						<th>Reeks</th>
 						<th>Thuis</th>
 						<th>Bezoekers</th>
-						<th>Datum</th>
-						<th>Datum</th>
-						<th>Locatie</th>
+						<th>Sporthal</th>
 					</tr>
-					{% for event in craft.entries.section('wedstrijden').orderBy('date') %}
-					<tr>
+
+					{% set eventEntries = craft.entries({
+				        section: 'wedstrijden',
+				        order: 'datum'
+				    }) %}
+					{% paginate eventEntries.limit(75) as pageInfo, pageEntries %}
+					{% for event in pageEntries %}
+					<tr class="text-small">
+						<td>{{ event.datum|date('d/m/Y') }}</td>
+						<td>{{ event.uur|date('H:i') }}</td>
 						<td>{{ event.reeks }}</td>
 						<td>{{ event.thuis }}</td>
 						<td>{{ event.bezoekers }}</td>
-						<td>{{ event.date }}</td>
-						<td>{{ event.datum|date('d/m/Y') }}</td>
 						<td>{{ event.locatie }}</td>
 					</tr>
 					{% endfor %}
+
 				</table>
+
+				{% include '_includes/_pagination' %}
 
 			</article>
 

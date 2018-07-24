@@ -7,12 +7,16 @@
 		<!-- Sidebar -->
 		<section>
 			<h3>Volgende matchen</h3>
-			<ul class="links">
-				{% for event in craft.entries.section('wedstrijden').orderBy('date').limit(10) %}
-				<li>{{ event.reeks }} - {{ event.date }} {{ event.uur|date('H:i') }}
+			<ul class="links text-small">
+				{% for event in craft.entries.section('wedstrijden').orderBy('datum').limit(10) %}
+				<li>
+					<strong>{{ event.reeks }}</strong>
+					<br> <i class="far fa-calendar-alt"></i> &nbsp; {{ event.datum|date('d/m/Y') }} &nbsp; <i class="far fa-clock"></i> &nbsp; {{ event.uur|date('H:i') }}
 				</li>
 				{% endfor %}
 			</ul>
+
+			<a href="{{ craft.entries.section('agenda').first().getUrl() }}" class="button">Alle matchen</a>
 		</section>
 
 	</div>
