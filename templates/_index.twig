@@ -6,14 +6,33 @@
 
 		<!-- Sidebar -->
 		<section>
-			<h3>Volgende matchen</h3>
+			<h3>Matchen deze week</h3>
 			<ul class="links text-small">
-				{% for event in craft.entries.section('wedstrijden').orderBy('datum').limit(10) %}
-				<li>
-					<strong>{{ event.reeks }}</strong>
-					<br> <i class="far fa-calendar-alt"></i> &nbsp; {{ event.datum|date('d/m/Y') }} &nbsp; <i class="far fa-clock"></i> &nbsp; {{ event.uur|date('H:i') }}
-				</li>
-				{% endfor %}
+
+				{% set day = now|date('w') %}
+				{# {% set fakenow = "1539822600" %} #}
+				{% set day = now|date('w') %}
+				{% set weekStart = now|date_modify("-#{day-1} days")|date('U') %}
+				{% set weekEnd = now|date_modify("+#{7-day} days")|date('U') %}
+
+				{% set eventEntries = craft.entries({
+					section: 'wedstrijden',
+				    order: 'datum',
+				    datum: 'and, >=' ~ weekStart ~ ', <=' ~ weekEnd,
+				}) %}
+
+				{% if eventEntries|length %}
+
+					{% for event in eventEntries %}
+					<li>
+						<strong>{{ event.reeks }}</strong>
+						<br> <i class="far fa-calendar-alt"></i> &nbsp; {{ event.datum|date('d/m/Y') }} &nbsp; <i class="far fa-clock"></i> &nbsp; {{ event.uur|date('H:i') }}
+					</li>
+					{% endfor %}
+
+				{% else %}
+					<p>Geen matchen gevonden.</p>
+				{% endif %}	
 			</ul>
 
 			<a href="{{ craft.entries.section('agenda').first().getUrl() }}" class="button">Alle matchen</a>
@@ -44,11 +63,11 @@
 			</div>
 		</section>
 
-		<section>
+		<!--<section>
 			<h3>Gouden Erkenning</h3>
 			<span class="image featured"><img src="images/goud.png" alt="" /></span>
 			<p>VBT Machelen kreeg Goud van de Vlaams-Brabantse Volleybalbond voor de goede jeugdwerking seizoen 2015-2016. Proficiat aan iedereen die zich hiervoor inzet!</p>
-		</section>
+		</section>-->
 
 		<section>
 			<h3>Jeugdtrainers gezocht</h3>
