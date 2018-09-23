@@ -1,0 +1,30 @@
+{% if block.image|length %}
+	<section>
+		<div class="row 100%">
+			<div class="6u 12u(mobilep)">
+				{% if block.position == 'right' %}
+					{{ block.text }}
+					{% if block.cta|length %}
+						<div>
+							<a href="{{ block.cta.getUrl() }}" class="button">{{ block.cta.getText() }}</a>
+						</div>
+					{% endif %}
+				{% else %}
+					<span class="image featured"><img src="{{ block.image.one().getUrl() }}" alt="" /></span>
+				{% endif %}
+			</div>
+			<div class="6u 12u(mobilep)">
+				{% if block.position == 'right' %}
+					<span class="image featured"><img src="{{ block.image.one().getUrl() }}" alt="" /></span>
+				{% else %}
+					{{ block.text }}
+					{% if block.cta|length %}
+						<div>
+							<a href="{{ block.cta.getUrl() }}" class="button">{{ block.cta.getText() }}</a>
+						</div>
+					{% endif %}
+				{% endif %}	
+			</div>
+		</div>
+	</section>
+{% endif %}

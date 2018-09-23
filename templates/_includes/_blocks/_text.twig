@@ -1,0 +1,10 @@
+{% if block.text|length %}
+	<section>
+		{{ block.text }}
+		{% if block.cta|length %}
+			<div>
+				<a href="{{ block.cta.getUrl() }}" class="button">{{ block.cta.getText() }}</a>
+			</div>
+		{% endif %}
+	</section>
+{% endif %}

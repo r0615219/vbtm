@@ -1,3 +1,7 @@
+section {
+	margin-bottom: 3em;
+}
+
 .feed-item.juicer.image-post, h1.referral, .j-share{
 	display: none !important;
 }
