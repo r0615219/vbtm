@@ -9,21 +9,20 @@
 			<h3>Matchen deze week</h3>
 			<ul class="links text-small">
 
-				{% set day = now|date('w') %}
-				{# {% set fakenow = "1539822600" %} #}
-				{% set day = now|date('w') %}
-				{% set weekStart = now|date_modify("-#{day-1} days")|date('U') %}
-				{% set weekEnd = now|date_modify("+#{7-day} days")|date('U') %}
+				{% set timezone = 'UTC' %}
+
+				{% set weekStart = now|date_modify("Monday this week")|date_modify('midnight')|date('U') %}
+				{% set weekEnd = now|date_modify("Sunday")|date_modify('midnight')|date('U') %}
 
 				{% set eventEntries = craft.entries({
 					section: 'wedstrijden',
-				    order: 'datum',
-				    datum: 'and, >=' ~ weekStart ~ ', <=' ~ weekEnd,
+					datum: 'and, >=' ~ weekStart ~ ', <=' ~ weekEnd,
+					order: 'datum, uur'
 				}) %}
 
 				{% if eventEntries|length %}
 
-					{% for event in eventEntries %}
+					{% for event in eventEntries.all() %}
 					<li>
 						<strong>{{ event.reeks }}</strong>
 						<br> <i class="far fa-calendar-alt"></i> &nbsp; {{ event.datum|date('d/m/Y') }} &nbsp; <i class="far fa-clock"></i> &nbsp; {{ event.uur|date('H:i') }}
@@ -32,7 +31,7 @@
 
 				{% else %}
 					<p>Geen matchen gevonden.</p>
-				{% endif %}	
+				{% endif %}
 			</ul>
 
 			<a href="{{ craft.entries.section('agenda').first().getUrl() }}" class="button">Alle matchen</a>
