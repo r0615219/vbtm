@@ -40,6 +40,7 @@ return [
     'staging' => [
         // Base site URL
         'siteUrl' => null,
+        'devMode' => true,
     ],
 
     // Production environment settings
