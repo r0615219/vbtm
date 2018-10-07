@@ -18,8 +18,66 @@
  */
 
 return [
-    'modules' => [
-        'my-module' => \modules\Module::class,
+    // All environments
+  '*' => [
+    'modules'   => [
     ],
-    //'bootstrap' => ['my-module'],
+  ],
+
+    // Live (production) environment
+  'production'  => [
+    'components' => [
+      'mailer' => function() {
+        // Get the stored email settings
+        $settings = Craft::$app->systemSettings->getEmailSettings();
+        // Override the transport adapter class
+        $settings->transportType = craft\mandrill\MandrillAdapter::class;
+        // Override the transport adapter settings
+        $settings->transportSettings = [
+          'apiKey' => 'smJtG2bXNLcKjHNTASudyA',
+          'subaccount' => strtoupper('VBTM'),
+        ];
+        return craft\helpers\MailerHelper::createMailer($settings);
+      },
+    ],
+  ],
+
+  // Staging (pre-production) environment
+  'staging'  => [
+    // Default to database 0, so PHP sessions are in a separate database
+    'components' => [
+      'mailer' => function() {
+        // Get the stored email settings
+        $settings = Craft::$app->systemSettings->getEmailSettings();
+        // Override the transport adapter class
+        $settings->transportType = craft\mandrill\MandrillAdapter::class;
+        // Override the transport adapter settings
+        $settings->transportSettings = [
+          'apiKey' => 'smJtG2bXNLcKjHNTASudyA',
+          'subaccount' => strtoupper('VBTM'),
+        ];
+        return craft\helpers\MailerHelper::createMailer($settings);
+      },
+    ],
+  ],
+
+  // Local (development) environment
+    'dev' => [
+        'components' => [
+            'mailer' => function() {
+                // Get the stored email settings
+                $settings = Craft::$app->systemSettings->getEmailSettings();
+                // Override the transport adapter class
+                $settings->transportType = \craft\mail\transportadapters\Smtp::class;
+                // Override the transport adapter settings
+                $settings->transportSettings = [
+                    'host' => '127.0.0.1',
+                    'port' => '1025',
+                    'useAuthentication' => false,
+                ];
+                return craft\helpers\MailerHelper::createMailer($settings);
+            }
+        ]
+    ],
+
 ];
