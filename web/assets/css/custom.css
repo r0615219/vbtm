@@ -93,11 +93,36 @@ p {
 	flex-wrap: wrap;
 }
 
+.sponsors--home .flex {
+	width: 90%;
+}
+
+@media screen and (min-width: 736px) {
+	.sponsors--home .flex {
+		width: 70%;
+	}
+}
+
 .sponsors .flex div {
 	margin: 30px;
 	width: 200px;
 	height: 200px;
 	overflow: hidden;
+}
+
+.sponsors--home .flex div {
+	margin: 5px;
+	width: 50px;
+	height: 50px;
+	overflow: hidden;
+}
+
+@media screen and (min-width: 736px) {
+	.sponsors--home .flex div {
+		margin: 15px;
+		width: 100px;
+		height: 100px;
+	}
 }
 
 .sponsors .flex div a, .sponsors .flex div img {
@@ -202,6 +227,10 @@ p {
 .pagination .pagination__btn.active, .pagination .pagination__btn.active:hover {
 	background-color: #2E2276;
 	color: white;
+}
+
+.text--center {
+	text-align: center;
 }
 
 

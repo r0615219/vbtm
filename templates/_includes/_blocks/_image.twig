@@ -1,6 +1,6 @@
 {% if block.image|length %}
 	<section>
 		{{ block.text }}
-		<span class="image featured"><img src="{{ block.image.one().getUrl() }}" alt="" /></span>
+		<span class="image featured"><img src="{{ block.image.one().getUrl() }}" alt="{{ block.image.one().title }}" /></span>
 	</section>
 {% endif %}

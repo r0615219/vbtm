@@ -73,48 +73,11 @@
 				</tr>
 			</table>
 
-			<h3>Trainingslocaties</h3>
-			<p>De trainingen gaan door op drie locaties :</p>
-			<ul class="list">
-				<li>Sporthal Bosveld : Heirbaan 10, Machelen</li>
-				<li>Sporthal Robusta : Cornelis Peetersstraat (naast GISO), Machelen</li>
-				<li>Gemeentelijke Basisschool (GBS), watertorenstraat 75, Diegem</li>
-			</ul>
-
-			<p>Alle thuiswedstrijden gaan door op zaterdag in Sporthal Bosveld.</p>
-
-			<br>
-
-			<h3>Bereikbaarheid Sporthal Bosveld</h3>
-			<p>De gemeente heeft beslist om de Heirbaan definitief te onderbreken komende van de Haachtsesteenweg. Hierdoor is het aangeraden om de afrit Machelen-Cargo op de E19 te nemen en via de Steenweg op Peutie de Heirbaan te bereiken.</p>
-
-			
-
-			<h3>Gedragscode</h3>
-
-			<p>Volleybal is een teamsport. Als speler of speelster van VBT Machelen vertegenwoordig je dus niet alleen jezelf maar ook de hele club. Om een goede werking van de club te verzekeren is het noodzakelijk om een gedragscode te hebben die iedereen kent. Er wordt verwacht dat elk lid van de club een maximale inspanning levert om de code na te leven.</p>
-			<p>Door lide te zijn van VBT Machelen is de speler of speelster de facto akkoord met de volgende gedragscode.</p>
-			<p>De club heeft de mogelijkheid om in te grijpen en eventueel sancties op te leggen bij overtreding van de gedragscode:</p>
-
-			<h5>HET LEREN SAMENSPELEN IS ENORM BELANGRIJK.</h5>
-			<p>Elkaar pesten is uit den boze.</p>
-			<p>Negatieve reacties of afbrekende kritiek op medespelers, trainer, tegenstanders, scheidsrechters en supporters kunnen niet getolereerd worden.</p>
-			<p>'Sluimerende’ conflicten moeten zo snel mogelijk worden opgelost. Trainers en de jeugdverantwoordelijken staan altijd open om op een constructieve manier aan een oplossing te werken.</p>
-
-			<h5>RESPECT IS EEN SLEUTELWOORD BINNEN DE CLUBWERKING.</h5>
-			<p>Elke speler moet respect hebben en tonen voor de trainer/coach.</p>
-			<p>Naast de trainer is er ook respect voor het materiaal. Opruimen van het gebruikte materiaal en het afval (flesjes, tape, papiertjes, …) na een training en wedstrijd is dan ook een must.</p>
-			<p>De uitrusting is eigendom van de club. Elke speler/speelster is weliswaar zelf verantwoordelijk voor zijn uitrusting. Het is niet de bedoeling dat kinderen hun wedstrijduitrusting dragen op training of bij andere gelegenheden dan de wedstrijd zelf, tenzij anders afgesproken. Bij het verlaten van de club en op het einde van elk seizoen moet de wedstrijduitrusting aan de ploegverantwoordelijke bezorgd worden.</p>
-			<p>Om de ploegsamenstellingen zo vlot mogelijk te laten verlopen, wordt aan de seniorspelers gevraagd tegen Nieuwjaar hun plannen voor het volgend seizoen mee te delen. Voor de jeugdspelers dient dit te gebeuren voor het eind van het lopende seizoen. Dit moet er voor zorgen dat er op een correcte manier ploegen kunnen ingeschreven worden.</p>
-
-			<h5>DISCIPLINE IS EEN NOODZAAK BINNEN EEN TEAMSPORT.</h5>
-			<p>Elke speler/speelster maar ook trainer/trainster doet dan ook zijn uiterste best om 15 minuten voor training, 45 minuten voor een thuiswedstrijd en minstens een uur en 15 minuten voor uitwedstrijden aanwezig te zijn. Indien dit om één of andere reden onmogelijk is, wordt dit met de trainer/coach gecommuniceerd. Afwezigheden, die uiteraard tot een minimum worden beperkt, worden mondeling, telefonisch of elektronisch aan de trainer/coach meegedeeld. De club verwacht van de trainer een voorbereide training, een zicht op het aantal aanwezigen is daarbij noodzakelijk.</p>
-
-			<h5>SOLIDARITEIT EN HYGIËNE</h5>
-			<p>Er wordt gezegd dat de ploegsfeer pas goed is wanneer de sfeer in de kleedkamer goed is. Daarom en omwille van de hygiëne moedigt de club aan om samen in de sporthal te douchen.</p>
-			<p>Naast het volleybalspecifieke wordt er ook van de spelers/speelsters verwacht om hun uiterste best te doen aanwezig te zijn op andere sportieve of extrasportieve activiteiten. Deze verbeteren enerzijds de ploeg- en clubsfeer en anderzijds dragen verscheidene activiteiten bij om het financiële plaatje van de club te doen kloppen.</p>
-
-			<h5>ALCOHOL, TABAK EN DRUGS ZIJN TIJDENS DE TRAININGEN, WEDSTRIJDEN EN CLUBGEBONDEN ACTIVITEITEN STRIKT VERBODEN.</h5>
+			{% if entry.contentBuilder|length %}
+				{% for block in entry.contentBuilder %}
+					{% include '_includes/_blocks/_' ~ block.type.handle %}
+				{% endfor %}
+			{% endif %}
 
 		</article>
 

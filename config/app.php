@@ -20,8 +20,12 @@
 return [
     // All environments
   '*' => [
-    'modules'   => [
+    'modules' => [
+        'json-module' => [
+            'class' => \modules\jsonmodule\JsonModule::class,
+        ],
     ],
+    'bootstrap' => ['json-module'],
   ],
 
     // Live (production) environment

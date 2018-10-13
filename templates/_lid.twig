@@ -8,74 +8,14 @@
 
 		<article>
 			<header>
-				<h2>Lid worden</h2>
+				<h2>{{ entry.title }}</h2>
 			</header>
 
-			<h3>Hoe word ik lid?</h3>
-			
-			<p>Je kan ons best contacteren via de website of, voor de jeugdspelers, via jeugdcel_vbtm@hotmail.com. We laten je dan weten waar en wanneer je het best kan aansluiten voor de trainingen.</p>
-
-			<p>Vanaf de eerste training mag je een maand gratis komen proberen of onze sport iets voor jou is.</p>
-
-			<p>De trainer zal tijdens de eerste training vragen om volgende gegevens :</p>
-
-			<ul class="list">
-				<li>Naam</li>
-				<li>Voornaam</li>
-				<li>Adres</li>
-				<li>Geboortedatum en -plaats</li>
-				<li>Naam van je ouders (voor minderjarigen)</li>
-				<li>Mailadres(sen) van jezelf / voor minderjarigen van je ouders</li>
-			</ul>
-
-			<p>Als je na een maand beslist om te blijven, krijg je een brief met meer informatie over het lidgeld. Je moet ook een digitale pasfoto doorsturen.</p>
-
-			<p>De trainer of ploegverantwoordelijke zal je een fiche geven waarmee je de huisarts bezoekt die bevestigt dat je geschikt bent om te sporten. Deze fiche moet je binnen de 2 weken terugbezorgen. Dit is uitermate belangrijk voor je verzekering.</p>
-
-			<p>Voor nieuwe leden die al eerder aangesloten waren bij een andere club, is er extra administratie vereist, afhankelijk van de situatie waarin je je bevindt. Indien nodig zal iemand van de administratieve cel contact opnemen met jou.</p>
-
-			<p>Van zodra je in orde bent met je lidgeld en je fiche correct is ingevuld ontvangt de ploegverantwoordelijke je vergunning.</p>
-
-			<p>Het lidgeld omvat :</p>
-
-			<ul class="list">
-				<li>€ 20,00 waarborg voor de uitrustingen. Deze waarborg wordt op het einde van het seizoen teruggestort bij het binnen brengen van de uitrusting bij de verantwoordelijke uitrustingen.</li>
-				<li>€ 25,00 eetkaarten voor de spaghettidag en/of restaurantdagen (afh. van datum van betaling). Deze kunnen aan de kassa verrekend worden.</li>
-				<li>Een opwarmingsshirt.</li>
-			</ul>
-			
-			<p>Het lidgeld kan gestort worden op rekening BE53 4261 1027 7153 van VBT Machelen met als mededeling Lidgeld &lt;Naam Voornaam&gt; &lt;geboortejaa&gt;>.</p>
-
-			<p>Er zijn kortingen of tegemoetkomingen voorzien :</p>
-
-			<ul class="list">
-				<li>Vanaf het 3de betalend lid van eenzelfde gezin worden er geen eetkaarten aangerekend (korting € 25,00).</li>
-				<li>Afhankelijk van het moment waarop je aansluit.</li>
-				<li>Veel mutualiteiten geven tegemoetkomingen op het lidgeld bij een erkende club van de Vlaamse Volleybalbond. Geef het formulier aan je ploegverantwoordelijke, die bezorgt het ingevuld en ondertekend terug.</li>
-			</ul>
-			
-			<h3>Wat krijg je als lid van de club?</h3>
-
-			<ul class="list">
-				<li>Als lid ben je verzekerd voor lichamelijke ongevallen op training, tijdens de verplaatsing van en naar de training/wedstrijden. Daarnaast ben je verzekerd voor alle andere clubactiviteiten.</li>
-				<li>Afhankelijk van je groep train je één, twee of drie per week onder begeleiding van gekwalificeerde trainers in aangepaste sportinfrastructuur.</li>
-				<li>Zodra je er klaar voor bent speel je minstens één wedstrijd per competitieweekend.</li>
-				<li>Elk lid ontvangt een T-shirt van de club voor de opwarming tijdens de wedstrijden en voor de bewegers tijdens trainingen.</li>
-				<li>Het engagement van een grote groep vrijwilligers om je op te nemen in onze club.</li>
-			</ul>
-
-			<h3>Wat verwachten we van jou?</h3>
-
-			<p>Ondanks het grote engagement van de trainers en bestuurders, hebben we ook de hulp van ouders en leden nodig om de club draaiende te houden en de toffe clubsfeer te garanderen. Als lid en ouder ben je immers een deel van onze familie en vragen we dat je een inspanning levert om :</p>
-
-			<ul class="list">
-				<li>Minstens op één activiteit (spaghettidag door de jeugd of restaurantdagen door seniors en recreatie) te komen helpen.</li>
-				<li>Vanaf 12 jaar 2 wedstrijdjes te fluiten bij de jeugd.</li>
-				<li>Als seniorspeler minstens 1 jeugdwedstrijd te fluiten en 1 senior wedstrijd te begeleiden.</li>
-				<li>Jeugdspelers te begeleiden op verplaatsing. Ouders die regelmatig rijden worden via de club verzekerd.</li>
-				<li>Als ouder van een U11 speler minstens 1 wedstrijd per jaar te fluiten.</li>
-				<li>Onze gedragscode na te leven en de waarden van de club - engagement, sportiviteit, respect, teamspirit en openheid - uit te dragen.</li>
-			</ul>
+			{% if entry.contentBuilder|length %}
+				{% for block in entry.contentBuilder %}
+					{% include '_includes/_blocks/_' ~ block.type.handle %}
+				{% endfor %}
+			{% endif %}
 
 		</article>
 

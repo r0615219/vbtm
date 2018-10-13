@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "aa1305cd2f54c0aac4b086901dcff550",
+    "content-hash": "c1cbffc5e28331e8d9fa276cb6dcba59",
     "packages": [
         {
             "name": "cakephp/core",
-            "version": "3.6.12",
+            "version": "3.7.0-beta1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cakephp/core.git",
-                "reference": "82741aeb90ca2fbbf9fbbd507d56d53b081db237"
+                "reference": "9df713c95af30b7084f888092a12d5a6968cca04"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cakephp/core/zipball/82741aeb90ca2fbbf9fbbd507d56d53b081db237",
-                "reference": "82741aeb90ca2fbbf9fbbd507d56d53b081db237",
+                "url": "https://api.github.com/repos/cakephp/core/zipball/9df713c95af30b7084f888092a12d5a6968cca04",
+                "reference": "9df713c95af30b7084f888092a12d5a6968cca04",
                 "shasum": ""
             },
             "require": {
@@ -53,20 +53,20 @@
                 "core",
                 "framework"
             ],
-            "time": "2018-07-26T19:56:06+00:00"
+            "time": "2018-09-13T21:06:36+00:00"
         },
         {
             "name": "cakephp/utility",
-            "version": "3.6.12",
+            "version": "3.7.0-beta1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cakephp/utility.git",
-                "reference": "14b61586db830a84aedadd57be2825f40cc29e09"
+                "reference": "1a4d271d9a3ad6e0096eabf5778342c8b5f81978"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cakephp/utility/zipball/14b61586db830a84aedadd57be2825f40cc29e09",
-                "reference": "14b61586db830a84aedadd57be2825f40cc29e09",
+                "url": "https://api.github.com/repos/cakephp/utility/zipball/1a4d271d9a3ad6e0096eabf5778342c8b5f81978",
+                "reference": "1a4d271d9a3ad6e0096eabf5778342c8b5f81978",
                 "shasum": ""
             },
             "require": {
@@ -106,7 +106,7 @@
                 "string",
                 "utility"
             ],
-            "time": "2018-09-05T00:44:03+00:00"
+            "time": "2018-09-14T01:26:50+00:00"
         },
         {
             "name": "cebe/markdown",
@@ -430,12 +430,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/craftcms/cms.git",
-                "reference": "2c14b485415bc02467cfdad173c3a81a7c6690d6"
+                "reference": "b3036c21aee2ee74187e2f651c8e7d9600eb2ced"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/2c14b485415bc02467cfdad173c3a81a7c6690d6",
-                "reference": "2c14b485415bc02467cfdad173c3a81a7c6690d6",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/b3036c21aee2ee74187e2f651c8e7d9600eb2ced",
+                "reference": "b3036c21aee2ee74187e2f651c8e7d9600eb2ced",
                 "shasum": ""
             },
             "require": {
@@ -507,24 +507,24 @@
                 "craftcms",
                 "yii2"
             ],
-            "time": "2018-10-03T10:49:54+00:00"
+            "time": "2018-10-11T13:09:14+00:00"
         },
         {
             "name": "craftcms/contact-form",
-            "version": "2.1.1",
+            "version": "2.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/craftcms/contact-form.git",
-                "reference": "84a76265f1258e9b9450ae4df5c80db970c16e39"
+                "reference": "8e6d41d68736b955a324e7dc34790bbc7f419a55"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/contact-form/zipball/84a76265f1258e9b9450ae4df5c80db970c16e39",
-                "reference": "84a76265f1258e9b9450ae4df5c80db970c16e39",
+                "url": "https://api.github.com/repos/craftcms/contact-form/zipball/8e6d41d68736b955a324e7dc34790bbc7f419a55",
+                "reference": "8e6d41d68736b955a324e7dc34790bbc7f419a55",
                 "shasum": ""
             },
             "require": {
-                "craftcms/cms": "^3.0.0-beta.27"
+                "craftcms/cms": "^3.0.0-RC11"
             },
             "type": "craft-plugin",
             "extra": {
@@ -553,7 +553,9 @@
             "description": "Add a simple contact form to your Craft CMS site",
             "keywords": [
                 "cms",
+                "contact",
                 "craftcms",
+                "form",
                 "yii2"
             ],
             "support": {
@@ -563,7 +565,7 @@
                 "docs": "https://github.com/craftcms/contact-form",
                 "rss": "https://github.com/craftcms/contact-form/commits/v2.atom"
             },
-            "time": "2017-12-05T00:33:27+00:00"
+            "time": "2018-07-19T18:09:16+00:00"
         },
         {
             "name": "craftcms/oauth2-craftid",
@@ -845,12 +847,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/lexer.git",
-                "reference": "3cab40356d8f30a0bb9d817ed4c33c097a4f0edf"
+                "reference": "32e1aa524970130eb66e2170dca01705a9ad83ec"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/lexer/zipball/3cab40356d8f30a0bb9d817ed4c33c097a4f0edf",
-                "reference": "3cab40356d8f30a0bb9d817ed4c33c097a4f0edf",
+                "url": "https://api.github.com/repos/doctrine/lexer/zipball/32e1aa524970130eb66e2170dca01705a9ad83ec",
+                "reference": "32e1aa524970130eb66e2170dca01705a9ad83ec",
                 "shasum": ""
             },
             "require": {
@@ -897,7 +899,7 @@
                 "parser",
                 "php"
             ],
-            "time": "2018-09-01T01:23:47+00:00"
+            "time": "2018-10-10T09:08:56+00:00"
         },
         {
             "name": "egulias/email-validator",
@@ -1084,12 +1086,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "3ff39a4d6e7d7d70cbc8ec8182b41e2ebcd49871"
+                "reference": "2798c457a4fc5a9bda4587ea0da9b177e22aff5a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/3ff39a4d6e7d7d70cbc8ec8182b41e2ebcd49871",
-                "reference": "3ff39a4d6e7d7d70cbc8ec8182b41e2ebcd49871",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/2798c457a4fc5a9bda4587ea0da9b177e22aff5a",
+                "reference": "2798c457a4fc5a9bda4587ea0da9b177e22aff5a",
                 "shasum": ""
             },
             "require": {
@@ -1141,7 +1143,7 @@
                 "rest",
                 "web service"
             ],
-            "time": "2018-10-04T08:20:27+00:00"
+            "time": "2018-10-08T11:42:37+00:00"
         },
         {
             "name": "guzzlehttp/promises",
@@ -1561,12 +1563,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "a11e4a75f256bdacf99d20780ce42d3b8272975c"
+                "reference": "b47afe057c365e710171a4113ad037e4e9a775e8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/a11e4a75f256bdacf99d20780ce42d3b8272975c",
-                "reference": "a11e4a75f256bdacf99d20780ce42d3b8272975c",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/b47afe057c365e710171a4113ad037e4e9a775e8",
+                "reference": "b47afe057c365e710171a4113ad037e4e9a775e8",
                 "shasum": ""
             },
             "require": {
@@ -1637,7 +1639,7 @@
                 "sftp",
                 "storage"
             ],
-            "time": "2018-09-14T15:30:29+00:00"
+            "time": "2018-10-12T07:33:21+00:00"
         },
         {
             "name": "league/oauth2-client",
@@ -1705,6 +1707,59 @@
                 "single sign on"
             ],
             "time": "2018-01-13T05:27:58+00:00"
+        },
+        {
+            "name": "lukeyouell/craft-fetch",
+            "version": "v1.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/lukeyouell/craft-fetch.git",
+                "reference": "12f6f567906c3cb052d3332a4fafcd48f9f10da2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/lukeyouell/craft-fetch/zipball/12f6f567906c3cb052d3332a4fafcd48f9f10da2",
+                "reference": "12f6f567906c3cb052d3332a4fafcd48f9f10da2",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.0.0"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Fetch",
+                "handle": "fetch",
+                "schemaVersion": "1.0.0",
+                "hasCpSettings": false,
+                "hasCpSection": false,
+                "changelogUrl": "https://raw.githubusercontent.com/lukeyouell/craft-fetch/v1/CHANGELOG.md",
+                "class": "lukeyouell\\fetch\\Fetch"
+            },
+            "autoload": {
+                "psr-4": {
+                    "lukeyouell\\fetch\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Luke Youell",
+                    "homepage": "https://github.com/lukeyouell"
+                }
+            ],
+            "description": "Utilise the Guzzle HTTP client from within your Craft templates.",
+            "keywords": [
+                "Craft",
+                "Guzzle",
+                "cms",
+                "craft-plugin",
+                "craftcms",
+                "fetch"
+            ],
+            "time": "2018-08-02T08:17:08+00:00"
         },
         {
             "name": "mikehaertl/php-shellcommand",
@@ -3043,12 +3098,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "5dd532eed87b6b3b1aec28957dd7a4b67ac6e79a"
+                "reference": "c8020aa5d848fcb934b047d85304544b174a95a7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/5dd532eed87b6b3b1aec28957dd7a4b67ac6e79a",
-                "reference": "5dd532eed87b6b3b1aec28957dd7a4b67ac6e79a",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/c8020aa5d848fcb934b047d85304544b174a95a7",
+                "reference": "c8020aa5d848fcb934b047d85304544b174a95a7",
                 "shasum": ""
             },
             "require": {
@@ -3102,7 +3157,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2018-09-27T14:33:35+00:00"
+            "time": "2018-10-12T12:54:33+00:00"
         },
         {
             "name": "verbb/feed-me",
@@ -3822,7 +3877,8 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "includable/craft-ics-importer": 20
+        "includable/craft-ics-importer": 20,
+        "lukeyouell/craft-fetch": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

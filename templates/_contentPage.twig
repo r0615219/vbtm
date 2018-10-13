@@ -1,0 +1,18 @@
+{% extends '_layout' %}
+{% block content %}
+<section class="wrapper style1">
+	<div class="container">
+		<div id="content">
+			
+			<h2>{{ entry.title }}</h2>
+
+			{% if entry.contentBuilder|length %}
+				{% for block in entry.contentBuilder %}
+					{% include '_includes/_blocks/_' ~ block.type.handle %}
+				{% endfor %}
+			{% endif %}
+
+		</div>
+	</div>
+</section>
+{% endblock %}
