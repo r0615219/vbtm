@@ -31,7 +31,8 @@
     "sebastianlenz/linkfield": "1.0.13",
     "rias/craft-position-fieldtype": "1.0.13",
     "true/punycode": "~2.0",
-    "lukeyouell/craft-fetch": "v1.x-dev"
+    "lukeyouell/craft-fetch": "v1.x-dev",
+    "verbb/super-table": "2.0.10"
   },
   "autoload": {
     "psr-4": {
