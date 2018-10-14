@@ -10,12 +10,12 @@
 			<article>
 				<header class="flex flex--left">
 					<div><h2>Agenda</h2></div>
-					<div><a class="button small" href="{{ craft.entries.section('agenda').one().getUrl() }}">Matchen</a></div>
-					<div><a class="button small alt" href="{{ craft.entries.section('agendaIntern').one().getUrl() }}">Diversen</a></div>
+					<div><a href="{{ craft.entries.section('agenda').one().getUrl() }}">Wedstrijden</a></div>
+					<div><a href="{{ craft.entries.section('agendaIntern').one().getUrl() }}">Clubactiviteiten</a></div>
 				</header>
 
 				<div class="mb-2">
-					<a href="https://www.facebook.com/pg/VBTMachelen/events/?ref=page_internal" target="_blank">Bekijk onze events op Facebook</a>
+					<a href="https://www.facebook.com/pg/VBTMachelen/events/?ref=page_internal" target="_blank">Bekijk onze evenementen op Facebook</a>
 				</div>
 
 				{% set eventEntries = craft.entries({
@@ -28,19 +28,31 @@
 						{% for event in eventEntries %}
 						<div class="item">
 							{% if event.affiche|length %}
-								<img class="image" src="{{ siteUrl }}{{ event.affiche.one().getUrl() }}" alt="{{ event.affiche.one().title }}">
+								<a data-fancybox="gallery" href="{{ siteUrl }}{{ event.affiche.one().getUrl() }}">
+									<img class="image" src="{{ siteUrl }}{{ event.affiche.one().getUrl() }}" alt="{{ event.affiche.one().title }}">
+								</a>
 							{% else %}
 								<img class="image" src="images/ploegen/placeholder.png" alt="Image Coming Soon">
 							{% endif %}
-							<h3>{{ event.title }}</h3>
-							<p>{{ event.date }}</p>
-							<div>{{ event.locatie }}</div>
-							<p><a href="{{ event.facebookEvent }}" target="_blank"class="icon fa-facebook"><span class="label">Facebook</span></a></p>
+							{#<div class="card-body">
+								<h3>{{ event.title }}</h3>
+								<p>{{ event.date }}</p>
+								<div>{{ event.locatie }}</div>
+								{% if event.facebookEvent|length %}
+									<a href="{{ event.facebookEvent }}" target="_blank" class="button mt-2">Visit Facebookevent</a>
+								{% endif %}
+							</div>#}
 						</div>
 						{% endfor %}
 					</div>
 
 				</div>
+
+				{#{% if entry.contentBuilder|length %}
+					{% for block in entry.contentBuilder %}
+						{% include '_includes/_blocks/_' ~ block.type.handle %}
+					{% endfor %}
+				{% endif %}#}
 
 			</article>
 

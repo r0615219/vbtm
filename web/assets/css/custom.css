@@ -226,6 +226,12 @@ p {
 	background-repeat: no-repeat;
 }
 
+.intern .flex .item .card-body {
+	background: #f7f7f7 url(images/bg01.png) !important;
+	padding: 10px;
+	border-radius: 5px;
+}
+
 /* AGENDA */
 .table-small {
 	display: block;
@@ -277,6 +283,10 @@ p {
 
 .mb-2 {
 	margin-bottom: 2em;
+}
+
+.mt-2 {
+	margin-top: 2em;
 }
 
 .flex--left {

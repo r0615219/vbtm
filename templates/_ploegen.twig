@@ -13,7 +13,9 @@
 						{% for team in entry.teamBuilder.all() %}
 							<div class="ploeg">
 								{% if team.image|length %}
-									<div class="image" style="background-image: url('{{ siteUrl }}{{ team.image.one().getUrl() }}')"></div>
+								<a data-fancybox="gallery" href="{{ siteUrl }}{{ team.image.one().getUrl() }}">
+									<img class="image" src="{{ siteUrl }}{{ team.image.one().getUrl() }}" alt="{{ team.image.one().title }}">
+								</a>
 								{% else %}
 									<div class="image" style="background-image: url('images/ploegen/placeholder.png')"></div>
 								{% endif %}
