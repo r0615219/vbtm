@@ -8,9 +8,15 @@
 			<!-- Content -->
 
 			<article>
-				<header>
-					<h2>Agenda</h2>
+				<header class="flex flex--left">
+					<div><h2>Agenda</h2></div>
+					<div><a class="button small alt" href="{{ craft.entries.section('agenda').one().getUrl() }}">Matchen</a></div>
+					<div><a class="button small" href="{{ craft.entries.section('agendaIntern').one().getUrl() }}">Diversen</a></div>
 				</header>
+
+				<div class="mb-2">
+					<a href="https://www.volleyscores.be/direct/VB-0431" target="_blank">Bekijk de volledige agenda op volleyscores.be</a>
+				</div>
 
 				<table class="table-small">
 					<tr style="font-weight: bold; text-align: left">

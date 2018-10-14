@@ -1,0 +1,51 @@
+{% extends "_layout" %}
+
+{% block content %}
+<section class="wrapper style1">
+	<div class="container">
+		<div id="content">
+
+			<!-- Content -->
+
+			<article>
+				<header class="flex flex--left">
+					<div><h2>Agenda</h2></div>
+					<div><a class="button small" href="{{ craft.entries.section('agenda').one().getUrl() }}">Matchen</a></div>
+					<div><a class="button small alt" href="{{ craft.entries.section('agendaIntern').one().getUrl() }}">Diversen</a></div>
+				</header>
+
+				<div class="mb-2">
+					<a href="https://www.facebook.com/pg/VBTMachelen/events/?ref=page_internal" target="_blank">Bekijk onze events op Facebook</a>
+				</div>
+
+				{% set eventEntries = craft.entries({
+				    section: 'events',
+				    order: 'postDate'
+				}) %}
+				<div class="intern">
+
+					<div class="flex">
+						{% for event in eventEntries %}
+						<div class="item">
+							{% if event.affiche|length %}
+								<img class="image" src="{{ siteUrl }}{{ event.affiche.one().getUrl() }}" alt="{{ event.affiche.one().title }}">
+							{% else %}
+								<img class="image" src="images/ploegen/placeholder.png" alt="Image Coming Soon">
+							{% endif %}
+							<h3>{{ event.title }}</h3>
+							<p>{{ event.date }}</p>
+							<div>{{ event.locatie }}</div>
+							<p><a href="{{ event.facebookEvent }}" target="_blank"class="icon fa-facebook"><span class="label">Facebook</span></a></p>
+						</div>
+						{% endfor %}
+					</div>
+
+				</div>
+
+			</article>
+
+		</div>
+	</div>
+</section>
+
+{% endblock %}

@@ -64,18 +64,4 @@
 	</div>
 </div>
 
-<section class="sponsors sponsors--home">
-	<h2 class="text--center">Sponsors</h2>
-	<div class="flex">
-		{% for sponsor in craft.entries.section('sponsors').all() %}
-		<div class="vertical">
-			<a href="{{ sponsor.hyperlink }}" target="_blank" rel="noopener">
-				<img src="{{ siteUrl }}{{ sponsor.logo.one().getUrl() }}" alt="{{ sponsor.title }}">
-			</a>
-		</div>
-		{% endfor %}
-	</ul>
-	<br class="clearfix">
-</section>
-
 {% endblock %}
