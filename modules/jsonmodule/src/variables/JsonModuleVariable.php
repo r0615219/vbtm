@@ -14,6 +14,7 @@ use modules\jsonmodule\JsonModule;
 use \Datetime;
 
 use Craft;
+use modules\jsonmodule\services\FacebookEventsService;
 
 /**
  * @author    Caroline Boeykens
@@ -29,7 +30,16 @@ class JsonModuleVariable
      * @param null $optional
      * @return string
      */
-    public function decode($team)
+
+    public function getEvents()
+    {
+        $data = JsonModule::$instance->FacebookEventsService->getEvents();
+        return $data;
+    }
+
+
+
+    /*public function decode($team)
     {
         $result = '';
         $json = file_get_contents('https://www.volleyadmin2.be/services/rangschikking_xml.php?reeks=' . $team . '&Wedstrijd=Hoofd&format=json');
@@ -64,5 +74,5 @@ class JsonModuleVariable
         } else {
             return null;
         }
-    }
+    }*/
 }

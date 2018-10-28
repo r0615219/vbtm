@@ -1,59 +1,147 @@
 {% extends "_layout" %}
 
 {% block content %}
-<section class="wrapper style1">
-	<div class="container">
-		<div id="content">
+    <section class="wrapper style1">
+        <div class="container">
+            <div id="content">
 
-			<!-- Content -->
+                {% set place = craft.request.getParam('place') %}
+                {% set team = craft.request.getParam('team') %}
 
-			<article>
-				<header class="flex flex--left">
-					<div><h2>Agenda</h2></div>
-					<div><a href="{{ craft.entries.section('agenda').one().getUrl() }}">Wedstrijden</a></div>
-					<div><a href="{{ craft.entries.section('agendaIntern').one().getUrl() }}">Clubactiviteiten</a></div>
-				</header>
+                <!-- Content -->
 
-				<div class="mb-2">
-					<a href="https://www.volleyscores.be/direct/VB-0431" target="_blank">Bekijk de volledige agenda op volleyscores.be</a>
-				</div>
+                <article>
+                    <header class="flex flex--left">
+                        <div><h2>Agenda</h2></div>
+                        <div><a href="{{ craft.entries.section('agenda').one().getUrl() }}">Wedstrijden</a></div>
+                        <div><a href="{{ craft.entries.section('agendaIntern').one().getUrl() }}">Clubactiviteiten</a>
+                        </div>
+                    </header>
 
-				<table class="table-small">
-					<tr style="font-weight: bold; text-align: left">
-						<th>Datum</th>
-						<th>Uur</th>
-						<th>Reeks</th>
-						<th>Thuis</th>
-						<th>Bezoekers</th>
-						<th>Sporthal</th>
-					</tr>
+                    <div class="mb-2">
+                        <a href="https://www.volleyscores.be/direct/VB-0431" target="_blank">Bekijk de volledige agenda
+                            op volleyscores.be</a>
+                    </div>
 
-					{% set eventEntries = craft.entries({
-				        section: 'wedstrijden',
-				        datum: '>= ' ~ now|date_modify('-1 day')|date('U'),
-				        order: 'datum, uur'
-				    }) %}
-				    
-					{% paginate eventEntries.limit(75) as pageInfo, pageEntries %}
-					{% for event in pageEntries %}
-					<tr class="text-small">
-						<td>{{ event.datum|date('d/m/Y') }}</td>
-						<td>{{ event.uur|date('H:i') }}</td>
-						<td>{{ event.reeks }}</td>
-						<td>{{ event.thuis }}</td>
-						<td>{{ event.bezoekers }}</td>
-						<td>{{ event.locatie }}</td>
-					</tr>
-					{% endfor %}
+                    <div>
+                        <form action="" method="GET" class="flex--right filter">
+                            <div class="vertical">
+                                <label for="place">Locatie : </label>
+                                <select name="place">
+                                    <option value="-">- - -</option>
+                                    <option {% if place == 'Machelen' %}selected{% endif %} value="Machelen">Thuis
+                                    </option>
+                                    <option {% if place == 'out' %}selected{% endif %} value="out">Uit</option>
+                                </select>
+                            </div>
+                            <div class="vertical">
+                                <label for="team">Ploeg : </label>
+                                <select name="team">
+                                    <option value="-">- - -</option>
+                                    <option {% if team == '2de divisie heren B' %}selected{% endif %}
+                                            value="2de divisie heren B">Heren A
+                                    </option>
+                                    <option {% if team == '2de Provinciale Mannen B' %}selected{% endif %}
+                                            value="2de Provinciale Mannen B">Heren B
+                                    </option>
+                                    <option {% if team == '3de Provinciale Mannen A' %}selected{% endif %}
+                                            value="3de Provinciale Mannen A">Heren C
+                                    </option>
+                                    <option {% if team == '2de Provinciale Vrouwen B' %}selected{% endif %}
+                                            value="2de Provinciale Vrouwen B">Dames A
+                                    </option>
+                                    <option {% if team == '3de Provinciale Vrouwen D' %}selected{% endif %}
+                                            value="3de Provinciale Vrouwen D">Dames B
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="vertical">
+                                <input type="submit" class="button btn small" value="Zoek">
+                            </div>
+                        </form>
+                        <hr>
+                    </div>
 
-				</table>
+                    <table class="table-small">
+                        <tr style="font-weight: bold; text-align: left">
+                            <th>Datum</th>
+                            <th>Uur</th>
+                            <th>Reeks</th>
+                            <th>Thuis</th>
+                            <th>Bezoekers</th>
+                            <th>Sporthal</th>
+                        </tr>
 
-				{% include '_includes/_pagination' %}
+                        {% set eventEntries = craft.entries({
+                            section: 'wedstrijden',
+                            datum: '>= ' ~ now|date_modify('-1 day')|date('U'),
+                            order: 'datum, uur'
+                        }) %}
 
-			</article>
+                        {% if place %}
+                            {% if place != '-' %}
+                                {% if place == 'Machelen' %}
+                                    {% set locatie = 'locatie:*Machelen*' %}
+                                {% else %}
+                                    {% set locatie = '-locatie:Machelen' %}
+                                {% endif %}
+                                {% set eventEntries = craft.entries({
+                                    section: 'wedstrijden',
+                                    datum: '>= ' ~ now|date_modify('-1 day')|date('U'),
+                                    order: 'datum, uur',
+                                    search: locatie
+                                }) %}
+                            {% endif %}
+                        {% endif %}
 
-		</div>
-	</div>
-</section>
+                        {% if team %}
+                            {% if team != '-' %}
+                                {% set eventEntries = craft.entries({
+                                    section: 'wedstrijden',
+                                    datum: '>= ' ~ now|date_modify('-1 day')|date('U'),
+                                    order: 'datum, uur',
+                                    reeks: team
+                                }) %}
+                            {% endif %}
+                        {% endif %}
+
+                        {% if place and team %}
+                            {% if place != '-' and team != '-' %}
+                                {% if place == 'Machelen' %}
+                                    {% set locatie = 'locatie:*Machelen*' %}
+                                {% else %}
+                                    {% set locatie = '-locatie:Machelen' %}
+                                {% endif %}
+                                {% set eventEntries = craft.entries({
+                                    section: 'wedstrijden',
+                                    datum: '>= ' ~ now|date_modify('-1 day')|date('U'),
+                                    order: 'datum, uur',
+                                    search: locatie,
+                                    reeks: team
+                                }) %}
+                            {% endif %}
+                        {% endif %}
+
+                        {% paginate eventEntries.limit(75) as pageInfo, pageEntries %}
+                        {% for event in pageEntries %}
+                            <tr class="text-small">
+                                <td>{{ event.datum|date('d/m/Y') }}</td>
+                                <td>{{ event.uur|date('H:i') }}</td>
+                                <td>{{ event.reeks }}</td>
+                                <td>{{ event.thuis }}</td>
+                                <td>{{ event.bezoekers }}</td>
+                                <td>{{ event.locatie }}</td>
+                            </tr>
+                        {% endfor %}
+
+                    </table>
+
+                    {% include '_includes/_pagination' %}
+
+                </article>
+
+            </div>
+        </div>
+    </section>
 
 {% endblock %}

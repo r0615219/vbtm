@@ -9,9 +9,13 @@
 				<div class="flex">
 					{% for sponsor in craft.entries.section('sponsors').all() %}
 						<div class="vertical">
+							{% if sponsor.hyperlink|length %}
 							<a href="{{ sponsor.hyperlink }}" target="_blank" rel="noopener">
 								<img src="{{ siteUrl }}{{ sponsor.logo.one().getUrl() }}" alt="{{ sponsor.title }}">
 							</a>
+							{% else %}
+								<img src="{{ siteUrl }}{{ sponsor.logo.one().getUrl() }}" alt="{{ sponsor.title }}">
+							{% endif %}
 						</div>
 					{% endfor %}
 				</ul>

@@ -299,10 +299,25 @@ p {
 	margin-right: 2em;
 }
 
+.flex--right {
+	display: flex;
+	justify-content: flex-end;
+	flex-wrap: wrap;
+}
+
+.flex--right div {
+	margin-right: 2em;
+}
+
 .image--small {
 	display: block;
 	width: 250px;
 	margin: 0 auto;
+}
+
+.filter label {
+    margin-top: 15px;
+    margin-right: 10px;
 }
 
 

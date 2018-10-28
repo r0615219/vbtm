@@ -23,6 +23,11 @@ return [
     'modules' => [
         'json-module' => [
             'class' => \modules\jsonmodule\JsonModule::class,
+            'components' => [
+                'FacebookEventsService' => [
+                    'class' => 'modules\jsonmodule\services\FacebookEventsService',
+                ],
+            ],
         ],
     ],
     'bootstrap' => ['json-module'],

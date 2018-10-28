@@ -4,10 +4,16 @@
 			<section class="3u 6u$(narrower) 12u$(mobilep)">
 				<h3>VBT Machelen</h3>
 				<ul class="links">
+					<li><a href="{{ craft.entries.section('home').first().getUrl() }}">Home</a></li>
 					<li><a href="{{ craft.entries.section('onzeClub').first().getUrl() }}">Onze club</a></li>
 					<li><a href="{{ craft.entries.section('ploegen').first().getUrl() }}">Ploegen</a></li>
 					<li><a href="{{ craft.entries.section('agenda').first().getUrl() }}">Agenda</a></li>
 					<li><a href="{{ siteUrl }}agenda/vbtm">Clubactiviteiten</a></li>
+				</ul>
+			</section>
+			<section class="3u 6u$(narrower) 12u$(mobilep)">
+				<h3>&nbsp;</h3>
+				<ul class="links">
 					<li><a href="{{ craft.entries.section('jeugd').first().getUrl() }}">Jeugdwerking</a></li>
 					<li><a href="{{ craft.entries.section('fotos').first().getUrl() }}">Foto's</a></li>
 					<li><a href="{{ craft.entries.section('lidWorden').first().getUrl() }}">Lid worden</a></li>
@@ -22,6 +28,8 @@
 					<li><a href="{{ siteUrl }}gedragscode">Gedragscode</a></li>
 					<li><a href="{{ siteUrl }}privacy">Privacyverklaring</a></li>
 				</ul>
+			</section>
+			<section class="3u 6u(narrower) 12u$(mobilep)">
 				<h3>Meer volleybal</h3>
 				<ul class="links">
 					<li><a target="_blank" href="http://www.volleyscores.be">Volleyscores</a></li>
@@ -30,54 +38,6 @@
 					<li><a target="_blank" href="http://www.volleyvlaanderen.be/">Volley Vlaanderen</a></li>
 				</ul>
 			</section>
-			<section class="6u 12u(narrower)">
-				<h3>Stuur ons een bericht</h3>
-
-				{% macro errorList(errors) %}
-				{% if errors %}
-				<ul class="errors">
-					{% for error in errors %}
-					<li>{{ error }}</li>
-					{% endfor %}
-				</ul>
-				{% endif %}
-				{% endmacro %}
-
-				{% from _self import errorList %}
-
-				<form method="post" action="" accept-charset="UTF-8">
-					{{ csrfInput() }}
-					<input type="hidden" name="action" value="contact-form/send">
-					{{ redirectInput('contact/bedankt') }}
-
-					<div class="row 50%">
-						<div class="6u 12u(mobilep)">
-							<input id="from-name" placeholder="Naam" type="text" name="fromName" value="{{ message.fromName ?? '' }}">
-							{{ message is defined and message ? errorList(message.getErrors('fromName')) }}
-						</div>
-						<div class="6u 12u(mobilep)">
-							<input id="from-email" placeholder="E-mailadres" type="email" name="fromEmail" value="{{ message.fromEmail ?? '' }}">
-							{{ message is defined and message ? errorList(message.getErrors('fromEmail')) }}
-						</div>
-					</div>
-
-					<div class="row 50%">
-						<div class="12u">
-							<textarea rows="10" placeholder="Bericht" cols="40" id="message" name="message">{{ message.message ?? '' }}</textarea>
-							{{ message is defined and message ? errorList(message.getErrors('message')) }}
-						</div>
-					</div>
-
-					<div class="row 50%">
-						<div class="12u">
-							<ul class="actions">
-								<li><input type="submit" class="button alt" value="Send" /></li>
-							</ul>
-						</div>
-					</div>
-				</form>
-
-			</section>
 		</div>
 	</div>
 
@@ -85,7 +45,6 @@
 	<ul class="icons">
 		<li><a target="_blank" href="https://www.facebook.com/VBTMachelen/" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
 		<li><a target="_blank" href="https://www.instagram.com/vbtmachelen/" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-		<li><a target="_blank"  href="https://twitter.com/MachelenVolley" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
 	</ul>
 
 	<!-- Copyright -->

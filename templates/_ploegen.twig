@@ -22,35 +22,6 @@
 											<div class="image" style="background-image: url('images/ploegen/placeholder.png')"></div>
 										{% endif %}
 										<h3>{{ team.ploegNaam }}</h3>
-										{#{% set request = craft.jsonModule.decode(team.reeks) %}
-										{% if request|length %}
-										<table>
-											<tr>
-												<td>Reeks</td>
-												<td>{{ request.Omschrijving ?? '' }}</td>
-											</tr>
-											<tr>
-												<td>Rangschikking</td>
-												<td>{{ request.Volgorde ?? '' }}</td>
-											</tr>
-											<tr>
-												<td>Aantal punten</td>
-												<td>{{ request.AantalPunten ?? '' }}</td>
-											</tr>
-										</table>
-										{% endif %}
-										{% set next = craft.jsonModule.next(team.reeks) %}
-										{% if next|length %}
-										<ul class="links text-small">
-											{% for event in next %}
-												{% if event != false %}
-													<li>
-														<i class="far fa-calendar-alt"></i> &nbsp; {{ event.t }} &nbsp; <i class="far fa-clock"></i> &nbsp; {{ event.Aanvangsuur }}
-													</li>
-												{% endif %}
-											{% endfor %}
-										</ul>
-										{% endif %}#}
 										<p><a href="https://www.volleyscores.be/direct/VB-0431/{{ team.reeks }}" target="_blank">Wedstrijden en rangschikking</a></p>
 									</div>
 								{% endfor %}

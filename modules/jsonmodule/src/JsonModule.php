@@ -10,6 +10,7 @@
 
 namespace modules\jsonmodule;
 
+use enshrined\svgSanitize\data\AttributeInterface;
 use modules\jsonmodule\assetbundles\jsonmodule\JsonModuleAsset;
 use modules\jsonmodule\variables\JsonModuleVariable;
 use modules\jsonmodule\twigextensions\JsonModuleTwigExtension;
@@ -127,6 +128,13 @@ class JsonModule extends Module
         );
     }
 
-    // Protected Methods
-    // =========================================================================
+    public function getSettings()
+    {
+        return array(
+          'facebookAppId'  => '462681950837223',
+          'facebookSecret' => '375acfd05e1ac6ff267c5778583dae49',
+          'facebookPage' => 'VBTMachelen'
+      );
+    }
+
 }
