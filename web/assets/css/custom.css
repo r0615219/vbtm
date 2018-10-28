@@ -341,7 +341,9 @@ p {
     border-radius: 5px;
 }
 
-
+.color--gray {
+    color: darkgrey;
+}
 
 
 

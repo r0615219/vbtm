@@ -6,18 +6,20 @@
 
 		<!-- Sidebar -->
 		<section>
-			<h3>Matchen deze week</h3>
+            {% set timezone = 'UTC' %}
+
+            {% set weekStart = now|date_modify("Monday this week")|date_modify('midnight')|date('U') %}
+            {% set weekEnd = now|date_modify("Sunday")|date_modify('midnight')|date('U') %}
+			<h2>Thuiswedstrijden</h2>
+            <h4 class="color--gray">{{ weekStart|date('d/m/Y') }} - {{ weekEnd|date('d/m/Y') }}</h4>
+
 			<ul class="links text-small">
-
-				{% set timezone = 'UTC' %}
-
-				{% set weekStart = now|date_modify("Monday this week")|date_modify('midnight')|date('U') %}
-				{% set weekEnd = now|date_modify("Sunday")|date_modify('midnight')|date('U') %}
 
 				{% set eventEntries = craft.entries({
 					section: 'wedstrijden',
 					datum: 'and, >=' ~ weekStart ~ ', <=' ~ weekEnd,
-					order: 'datum, uur'
+					order: 'datum, uur',
+                    search: 'locatie:*Machelen*'
 				}) %}
 
 				{% if eventEntries|length %}
