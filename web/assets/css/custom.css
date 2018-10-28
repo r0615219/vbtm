@@ -309,6 +309,19 @@ p {
 	margin-right: 2em;
 }
 
+.flex--center {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.flex--center div {
+    margin-right: 2em;
+}
+
 .image--small {
 	display: block;
 	width: 250px;
@@ -318,6 +331,14 @@ p {
 .filter label {
     margin-top: 15px;
     margin-right: 10px;
+}
+
+.bg--light {
+    background-color: #f6f6f6;
+    padding: 1em;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
 }
 
 
