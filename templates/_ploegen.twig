@@ -15,8 +15,8 @@
 							{% for team in block.ploeg %}
 								<div class="ploeg">
 									{% if team.image|length %}
-										<a data-fancybox="gallery" href="{{ siteUrl }}{{ team.image.one().getUrl() }}">
-											<img class="image" src="{{ siteUrl }}{{ team.image.one().getUrl() }}" alt="{{ team.image.one().title }}">
+										<a data-fancybox="gallery" href="{{ siteUrl }}{{ team.image.one().getUrl('ploegfoto') }}">
+											<img class="image" src="{{ siteUrl }}{{ team.image.one().getUrl('ploegfoto') }}" alt="{{ team.image.one().title }}">
 										</a>
 										{% else %}
 											<div class="image" style="background-image: url('images/ploegen/placeholder.png')"></div>
