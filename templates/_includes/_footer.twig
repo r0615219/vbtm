@@ -51,8 +51,16 @@
 					{{ redirectInput('nieuwsbrief-bedankt') }}
 					<div class="row 50%">
 						<div class="12u">
-							<input id="email" placeholder="E-mailadres" type="email" name="email">
+							<input id="email" placeholder="E-mailadres" type="email" name="email" required="required">
 							{{ message is defined and message ? errorList(message.getErrors('email')) }}
+						</div>
+					</div>
+					<div class="row 50%">
+						<div class="12u">
+							<label for="terms">
+								<input type="checkbox" name="terms" id="terms" required="required">
+								<span class="checkbox-label">Ik verklaar dat ik de <a target="_blank" href="/privacy">privacy policy</a> heb gelezen en goedgekeurd.</small>
+							</label>
 						</div>
 					</div>
 					<div class="row 50%">

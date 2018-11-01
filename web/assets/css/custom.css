@@ -354,6 +354,10 @@ p {
     color: darkgrey;
 }
 
+.checkbox-label {
+	font-weight: normal;
+}
+
 
 
 
