@@ -33,7 +33,8 @@
     "true/punycode": "~2.0",
     "lukeyouell/craft-fetch": "v1.x-dev",
     "verbb/super-table": "2.0.10",
-    "itscoding/facebook-connector": "v1.3.0"
+    "itscoding/facebook-connector": "v1.3.0",
+    "aelvan/mailchimp-subscribe": "v2.0.2"
   },
   "autoload": {
     "psr-4": {
