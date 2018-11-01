@@ -19,7 +19,7 @@
 											<img class="image" src="{{ siteUrl }}{{ team.image.one().getUrl('ploegfoto') }}" alt="{{ team.image.one().title }}">
 										</a>
 										{% else %}
-											<div class="image" style="background-image: url('images/ploegen/placeholder.png')"></div>
+											<div class="image image-250" style="background-image: url('{{ siteUrl }}images/ploegen/placeholder.png')"></div>
 										{% endif %}
 										<h3>{{ team.ploegNaam }}</h3>
 										<p><a href="https://www.volleyscores.be/direct/VB-0431/{{ team.reeks }}" target="_blank">Wedstrijden en rangschikking</a></p>
