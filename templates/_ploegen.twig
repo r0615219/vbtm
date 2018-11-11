@@ -22,7 +22,9 @@
 											<div class="image image-300" style="background-image: url('{{ siteUrl }}images/ploegen/placeholder.png')"></div>
 										{% endif %}
 										<h3>{{ team.ploegNaam }}</h3>
-										<p><a href="https://www.volleyscores.be/direct/VB-0431/{{ team.reeks }}" target="_blank">Wedstrijden en rangschikking</a></p>
+                                        {% if team.reeks|length %}
+                                            <p><a href="{{ team.reeks }}" target="_blank">Wedstrijden en rangschikking</a></p>
+                                        {% endif %}
 									</div>
 								{% endfor %}
 							</div>

@@ -1,52 +1,96 @@
 {% extends "_layout" %}
 
 {% block content %}
-<section class="wrapper style1">
-	<div class="container">
-		<div id="content">
+    <section class="wrapper style1">
+        <div class="container">
+            <div id="content">
 
-			<!-- Content -->
+                <!-- Content -->
 
-			<article>
-				<header class="flex flex--left">
-					<div><h2>Agenda</h2></div>
-				</header>
+                <article>
+                    <header class="flex flex--left">
+                        <div><h2>Agenda</h2></div>
+                    </header>
 
-				<div class="flex--left mb-2">
-					<div><a href="{{ craft.entries.section('agenda').one().getUrl() }}">Wedstrijden</a></div>
-					<div><a href="{{ craft.entries.section('agendaIntern').one().getUrl() }}">Clubactiviteiten</a></div>
-				</div>
+                    <div class="flex--left mb-2">
+                        <div><a href="{{ craft.entries.section('agenda').one().getUrl() }}">Wedstrijden</a></div>
+                        <div><a href="{{ craft.entries.section('agendaIntern').one().getUrl() }}">Clubactiviteiten</a>
+                        </div>
+                    </div>
 
-				<div class="mb-2">
-					<a href="https://www.facebook.com/pg/VBTMachelen/events/?ref=page_internal" target="_blank">Bekijk onze evenementen op Facebook</a>
-				</div>
+                    <div>
+                        {% set events = craft.jsonModule.getEvents() %}
+                        {% if events|length %}
+                            <h3>Kalender</h3>
+                            <table class="table">
+                                <tr class="table-head"
+                                    style="font-weight: bold; text-align: left; border-bottom: 1px solid darkgray;">
+                                    <th>Datum</th>
+                                    <th>Uur</th>
+                                    <th>Evenement</th>
+                                    <th>Locatie</th>
+                                    <th>Facebook</th>
+                                </tr>
+                                {% for event in events.data %}
+                                    <tr class="margins">
+                                        <td>{{ event.start_time|date('d/m/Y') }}</td>
+                                        <td>{{ event.start_time|date('H:i') }}</td>
+                                        <td><strong>{{ event.name }}</strong></td>
+                                        {% if event.place|length %}
+                                            {% if event.place.location is defined and event.place.location|length %}
+                                                <td>{{ event.place.location.street }}
+                                                    , {{ event.place.location.zip }} {{ event.place.location.city }}</td>
+                                            {% else %}
+                                                <td>{{ event.place.name }}</td>
+                                            {% endif %}
+                                        {% else %}
+                                            <td>&nbsp;</td>
+                                        {% endif %}
+                                        <td><a href="https://www.facebook.com/events/{{ event.id }}" target="_blank"
+                                               class="card-link">Bekijk het evenement op Facebook</a></td>
+                                    </tr>
+                                {% endfor %}
+                            </table>
+                        {% endif %}
 
-				{% set eventEntries = craft.entries({
-				    section: 'events',
-				    order: 'postDate'
-				}) %}
-				<div class="intern">
+                        <div class="mb-2">
+                            <a href="https://www.facebook.com/pg/VBTMachelen/events/?ref=page_internal" target="_blank">Bekijk
+                                onze evenementen op Facebook</a>
+                        </div>
 
-					<div class="flex">
-						{% for event in eventEntries %}
-						<div class="item">
-							{% if event.affiche|length %}
-								<a data-fancybox="gallery" href="{{ siteUrl }}{{ event.affiche.one().getUrl() }}">
-									<img class="image" src="{{ siteUrl }}{{ event.affiche.one().getUrl() }}" alt="{{ event.affiche.one().title }}">
-								</a>
-							{% else %}
-								<img class="image" src="images/ploegen/placeholder.png" alt="Image Coming Soon">
-							{% endif %}
-						</div>
-						{% endfor %}
-					</div>
+                    </div>
 
-				</div>
+                    {% set eventEntries = craft.entries({
+                        section: 'events',
+                        order: 'postDate'
+                    }) %}
 
-			</article>
+                    {% if eventEntries %}
+                        <div class="intern">
+                            <h3>Posters</h3>
+                            <div class="flex">
+                                {% for event in eventEntries %}
+                                    <div class="item">
+                                        {% if event.affiche|length %}
+                                            <a data-fancybox="gallery"
+                                               href="{{ siteUrl }}{{ event.affiche.one().getUrl() }}">
+                                                <img class="image" src="{{ siteUrl }}{{ event.affiche.one().getUrl() }}"
+                                                     alt="{{ event.affiche.one().title }}">
+                                            </a>
+                                        {% else %}
+                                            <img class="image" src="images/ploegen/placeholder.png"
+                                                 alt="Image Coming Soon">
+                                        {% endif %}
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    {% endif %}
 
-		</div>
-	</div>
-</section>
+                </article>
+
+            </div>
+        </div>
+    </section>
 
 {% endblock %}

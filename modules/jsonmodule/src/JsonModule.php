@@ -133,7 +133,7 @@ class JsonModule extends Module
         return array(
           'facebookAppId'  => '462681950837223',
           'facebookSecret' => '375acfd05e1ac6ff267c5778583dae49',
-          'facebookPage' => 'VBTMachelen'
+          'facebookPage' => '392040357479158'
       );
     }
 
