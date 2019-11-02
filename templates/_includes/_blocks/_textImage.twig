@@ -5,12 +5,12 @@
 				{% if block.position == 'right' %}
                     <div>
                         {{ block.text }}
+                        {% if block.cta|length %}
+							<div>
+								<a href="{{ block.cta.getUrl() }}" class="button">{{ block.cta.getText() }}</a>
+							</div>
+                        {% endif %}
                     </div>
-					{% if block.cta|length %}
-						<div>
-							<a href="{{ block.cta.getUrl() }}" class="button">{{ block.cta.getText() }}</a>
-						</div>
-					{% endif %}
 				{% else %}
 					<span class="image featured vertical"><img src="{{ block.image.one().getUrl() }}" alt="" /></span>
 				{% endif %}
@@ -21,12 +21,12 @@
 				{% else %}
                     <div>
                         {{ block.text }}
+                        {% if block.cta|length %}
+							<div>
+								<a href="{{ block.cta.getUrl() }}" class="button">{{ block.cta.getText() }}</a>
+							</div>
+                        {% endif %}
                     </div>
-					{% if block.cta|length %}
-						<div>
-							<a href="{{ block.cta.getUrl() }}" class="button">{{ block.cta.getText() }}</a>
-						</div>
-					{% endif %}
 				{% endif %}	
 			</div>
 		</div>
