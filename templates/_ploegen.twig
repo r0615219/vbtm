@@ -12,7 +12,7 @@
 						<div>
 							<h3>{{ block.blockTitle }}</h3>
 							<div class="flex">
-							{% for team in block.ploeg %}
+							{% for team in block.ploegen %}
 								<div class="ploeg">
 									{% if team.image|length %}
 										<a data-fancybox="gallery" href="{{ siteUrl }}{{ team.image.one().getUrl('ploegfoto') }}">
@@ -21,9 +21,9 @@
 										{% else %}
 											<div class="image image-300" style="background-image: url('{{ siteUrl }}images/ploegen/placeholder.png')"></div>
 										{% endif %}
-										<h3>{{ team.ploegNaam }}</h3>
+										<h3>{{ team.title }}</h3>
                                         {% if team.reeks|length %}
-                                            <p><a href="{{ team.reeks }}" target="_blank">Wedstrijden en rangschikking</a></p>
+                                            <p><a href="https://www.volleyscores.be/direct/{{ team.stamnummer }}/{{ team.reeks }}" target="_blank">Wedstrijden en rangschikking</a></p>
                                         {% endif %}
 									</div>
 								{% endfor %}

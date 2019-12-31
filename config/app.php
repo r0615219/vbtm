@@ -29,8 +29,16 @@ return [
                 ],
             ],
         ],
+        'vbtm' => [
+            'class' => \modules\vbtm\VBTM::class,
+            'components' => [
+                'vBTMService' => [
+                    'class' => 'modules\vbtm\services\VBTMService',
+                ],
+            ],
+        ],
     ],
-    'bootstrap' => ['json-module'],
+    'bootstrap' => ['vbtm'],
   ],
 
     // Live (production) environment

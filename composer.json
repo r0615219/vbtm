@@ -20,25 +20,26 @@
     "rss": "https://craftcms.com/changelog.rss"
   },
   "require": {
-    "craftcms/cms": "^3.0.0",
+    "craftcms/cms": "3.3.19",
     "vlucas/phpdotenv": "^2.4.0",
     "includable/craft-ics-importer": "dev-master",
-    "studioespresso/craft-dumper": "1.2.1",
-    "verbb/feed-me": "3.0.0-beta.17",
+    "studioespresso/craft-dumper": "2.0.0",
     "ifsnop/mysqldump-php": "2.*",
-    "craftcms/contact-form": "2.2.2",
-    "craftcms/redactor": "2.1.6",
-    "sebastianlenz/linkfield": "1.0.13",
-    "rias/craft-position-fieldtype": "1.0.13",
+    "craftcms/contact-form": "2.2.6",
+    "craftcms/redactor": "2.4.0",
+    "sebastianlenz/linkfield": "1.0.19",
+    "rias/craft-position-fieldtype": "1.0.14",
     "true/punycode": "~2.0",
     "lukeyouell/craft-fetch": "v1.x-dev",
-    "verbb/super-table": "2.0.10",
+    "verbb/super-table": "2.3.1",
     "itscoding/facebook-connector": "v1.3.0",
-    "aelvan/mailchimp-subscribe": "v2.0.2"
+    "aelvan/mailchimp-subscribe": "3.0.1",
+    "craftcms/feed-me": "4.1.2"
   },
   "autoload": {
     "psr-4": {
-      "modules\\jsonmodule\\": "modules/jsonmodule/src/"
+      "modules\\jsonmodule\\": "modules/jsonmodule/src/",
+      "modules\\vbtm\\": "modules/vbtm/src/"
     }
   },
   "config": {

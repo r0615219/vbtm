@@ -6,13 +6,13 @@
 	<!-- Nav -->
 	<nav id="nav">
 		<ul>
-			<li {% if entry.section.handle == 'home' %}class="current"{% endif %}><a href="{{ craft.entries.section('home').first().getUrl() }}">Home</a></li>
-			<li {% if entry.section.handle == 'onzeClub' %}class="current"{% endif %}><a href="{{ craft.entries.section('onzeClub').first().getUrl() }}">Onze Club</a></li>
-			<li {% if entry.section.handle == 'ploegen' %}class="current"{% endif %}><a href="{{ craft.entries.section('ploegen').first().getUrl() }}">Ploegen</a></li>
-			<li {% if entry.section.handle == 'agenda' %}class="current"{% endif %}><a href="{{ craft.entries.section('agenda').first().getUrl() }}">Agenda</a></li>
-			<li {% if entry.section.handle == 'jeugd' %}class="current"{% endif %}><a href="{{ craft.entries.section('jeugd').first().getUrl() }}">Jeugd</a></li>
-			<li {% if entry.section.handle == 'fotos' %}class="current"{% endif %}><a href="{{ craft.entries.section('fotos').first().getUrl() }}">Foto's</a></li>
-			<li {% if entry.section.handle == 'contact' %}class="current"{% endif %}><a href="{{ craft.entries.section('contact').first().getUrl() }}">Contact</a></li>
+			<li {% if entry.section.handle == 'home' %}class="current"{% endif %}><a href="{{ craft.entries.section('home').one().getUrl() }}">Home</a></li>
+			<li {% if entry.section.handle == 'onzeClub' %}class="current"{% endif %}><a href="{{ craft.entries.section('onzeClub').one().getUrl() }}">Onze Club</a></li>
+			<li {% if entry.section.handle == 'ploegen' %}class="current"{% endif %}><a href="{{ craft.entries.section('ploegenOverview').one().getUrl() }}">Ploegen</a></li>
+			<li {% if entry.section.handle == 'agenda' %}class="current"{% endif %}><a href="{{ craft.entries.section('agenda').one().getUrl() }}">Agenda</a></li>
+			<li {% if entry.section.handle == 'jeugd' %}class="current"{% endif %}><a href="{{ craft.entries.section('jeugd').one().getUrl() }}">Jeugd</a></li>
+			<li {% if entry.section.handle == 'fotos' %}class="current"{% endif %}><a href="{{ craft.entries.section('fotos').one().getUrl() }}">Foto's</a></li>
+			<li {% if entry.section.handle == 'contact' %}class="current"{% endif %}><a href="{{ craft.entries.section('contact').one().getUrl() }}">Contact</a></li>
 		</ul>
 	</nav>
 

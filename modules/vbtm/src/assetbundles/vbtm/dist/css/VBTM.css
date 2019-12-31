@@ -1,0 +1,42 @@
+/**
+ * VBTM module for Craft CMS
+ *
+ * VBTM CSS
+ *
+ * @author    Caroline Boeykens
+ * @copyright Copyright (c) 2019 Caroline Boeykens
+ * @link      https://www.carolineboeykens.be
+ * @package   VBTMModule
+ * @since     1.0.0
+ */
+
+.btn.submit {
+    background-image: linear-gradient(#002db3, #002db3);
+}
+
+.btn.submit:not(.disabled):not(.inactive):hover, .btn.submit:not(.disabled):not(.inactive).hover,
+.btn.submit:not(.disabled):not(.inactive):active, .btn.submit:not(.disabled):not(.inactive).active {
+    background-image: linear-gradient(#0039e6, #0039e6);
+}
+
+#global-sidebar {
+    background-image: linear-gradient(#002080, #002080);
+}
+
+#global-sidebar #nav li:not(.has-subnav) > a.sel {
+    background: #00134d;
+}
+
+#global-sidebar > a:hover, #global-sidebar *:not(.has-subnav) > a:hover {
+    background: #001a66;
+}
+
+#main-container #crumbs,
+#main-container #main #header {
+    background: rgba(26, 83, 255, 0.2);
+}
+
+/* Margin at plugins page */
+#plugins {
+    margin-bottom: 10rem;
+}
