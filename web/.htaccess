@@ -1,20 +1,21 @@
 <IfModule mod_rewrite.c>
     RewriteEngine On
 
-    # Force to a www prefix
-    # RewriteCond %{HTTP_HOST} !^www\.
-    # RewriteRule ^(.*)$ http://www.%{HTTP_HOST}/$1 [R=301,L]
+    # staging url to real url
+    RewriteCond %{HTTP_HOST} ^vbtm.carolineboeykens.be$ [NC]
+    RewriteRule (.*)$ http://www.vbtmachelen.be/$1 [R=302,L]
+
+    # Force any not .local.be domain to a www prefix
+    RewriteCond %{HTTP_HOST} !^www\.
+    RewriteCond %{HTTP_HOST} !\.local.be$
+    RewriteRule ^(.*)$ http://www.%{HTTP_HOST}$1 [R=301,L]
 
     # Force https
     RewriteCond %{HTTPS} off
     RewriteCond %{HTTP:X-Forwarded-Proto} !https
+    RewriteCond %{HTTP_HOST} !\.local.be$
     RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-    # Send would-be 404 requests to Craft
-    RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteCond %{REQUEST_URI} !^/(favicon\.ico|apple-touch-icon.*\.png)$ [NC]
-    RewriteRule (.+) index.php?p=$1 [QSA,L]
 </IfModule>
 
 ## EXPIRES CACHING ##
