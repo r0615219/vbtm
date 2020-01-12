@@ -38,8 +38,8 @@
                                         <td><strong>{{ event.name }}</strong></td>
                                         {% if event.place|length %}
                                             {% if event.place.location is defined and event.place.location|length %}
-                                                <td>{{ event.place.location.street }}
-                                                    , {{ event.place.location.zip }} {{ event.place.location.city }}</td>
+                                                <td>{{ event.place.location.street ?? '' }}
+                                                    , {{ event.place.location.zip ?? '' }} {{ event.place.location.city ?? '' }}</td>
                                             {% else %}
                                                 <td>{{ event.place.name }}</td>
                                             {% endif %}

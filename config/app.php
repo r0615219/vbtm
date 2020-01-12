@@ -38,7 +38,7 @@ return [
             ],
         ],
     ],
-    'bootstrap' => ['vbtm'],
+    'bootstrap' => ['json-module', 'vbtm'],
   ],
 
     // Live (production) environment
