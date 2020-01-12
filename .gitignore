@@ -2,3 +2,12 @@
 /.idea
 /vendor
 .DS_Store
+/web/files/*
+/web/cpresources/*
+/node_modules
+/web/mix-manifest.json
+/storage/logs
+/storage/temp
+/storage/runtime
+vbtm.local.be.crt
+vbtm.local.be.key
