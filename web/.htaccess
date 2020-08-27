@@ -3,7 +3,7 @@
 
 	# staging url to real url
     RewriteCond %{HTTP_HOST} ^vbtm.vbtmachelen.be$ [NC]
-    RewriteRule (.*)$ http://www.vbtmachelen.be/$1 [R=302,L]
+    RewriteRule (.*)$ https://www.vbtmachelen.be/$1 [R=302,L]
 
     # Force to a www prefix
     RewriteCond %{HTTP_HOST} !^www\.
