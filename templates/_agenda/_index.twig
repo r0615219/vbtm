@@ -34,15 +34,16 @@
                             </div>
                             {% set teams = craft.entries.section('ploegen').all() %}
                             {% if teams|length %}
-                            <div class="vertical">
-                                <label for="team">Ploeg : </label>
-                                <select name="team">
-                                    <option value="-">- - -</option>
-                                    {% for team in teams if team.reeks|length %}
-                                        <option value="{{ team.reeks }}" {% if teamQuery == team.reeks %}selected{% endif %}>{{ team.title }}</option>
-                                    {% endfor %}
-                                </select>
-                            </div>
+                                <div class="vertical">
+                                    <label for="team">Ploeg : </label>
+                                    <select name="team">
+                                        <option value="-">- - -</option>
+                                        {% for team in teams if team.reeks|length %}
+                                            <option value="{{ team.reeks }}"
+                                                    {% if teamQuery == team.reeks %}selected{% endif %}>{{ team.title }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
                             {% endif %}
                             <div class="vertical">
                                 <input type="submit" class="button btn small" value="Zoek">
@@ -103,25 +104,29 @@
 
                     {% if eventEntries|length %}
                         <table class="table-small">
-                            <tr style="font-weight: bold; text-align: left">
-                                <th>Datum</th>
-                                <th>Uur</th>
-                                <th>Reeks</th>
-                                <th>Thuis</th>
-                                <th>Bezoekers</th>
-                                <th>Sporthal</th>
-                            </tr>
-                            {% paginate eventEntries.limit(75) as pageInfo, pageEntries %}
-                            {% for event in pageEntries %}
-                                <tr class="text-small">
-                                    <td>{{ event.datum|date('d/m/Y') }}</td>
-                                    <td>{{ event.uur|date('H:i') }}</td>
-                                    <td>{{ event.reeks }}</td>
-                                    <td>{{ event.thuis }}</td>
-                                    <td>{{ event.bezoekers }}</td>
-                                    <td>{{ event.locatie }}</td>
+                            <tbody>
+                                <tr style="font-weight: bold; text-align: left">
+                                    <th>Datum</th>
+                                    <th>Uur</th>
+                                    <th>Reeks</th>
+                                    <th>Thuis</th>
+                                    <th>Bezoekers</th>
+                                    <th>Sporthal</th>
                                 </tr>
-                            {% endfor %}
+                                {% paginate eventEntries.limit(75) as pageInfo, pageEntries %}
+                                {% for event in pageEntries %}
+
+                                    {% set reeks = craft.entries.section('ploegen').reeks(event.reeks).one() %}
+                                    <tr class="text-small">
+                                        <td>{{ event.datum|date('d/m/Y') }}</td>
+                                        <td>{{ event.uur|date('H:i') }}</td>
+                                        <td>{{ reeks ? reeks.title : event.reeks }}</td>
+                                        <td>{{ event.thuis }}</td>
+                                        <td>{{ event.bezoekers }}</td>
+                                        <td>{{ event.locatie }}</td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
                         </table>
 
                         {% include '_includes/_pagination' %}
