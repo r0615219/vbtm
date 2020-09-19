@@ -34,12 +34,13 @@ class ImportController extends Controller
             'offset' => 0,
         ]));
 
-        $d6 = Plugin::$plugin->feeds->getFeedById(7);
+        // Geen D6 meer sinds 2020
+        /*$d6 = Plugin::$plugin->feeds->getFeedById(7);
         Craft::$app->getQueue()->delay(0)->push(new FeedImport([
             'feed' => $d6,
             'limit' => 0,
             'offset' => 0,
-        ]));
+        ]));*/
 
         $mikst = Plugin::$plugin->feeds->getFeedById(8);
         Craft::$app->getQueue()->delay(0)->push(new FeedImport([
